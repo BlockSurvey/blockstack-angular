@@ -1,0 +1,14 @@
+{ 
+    "projects": {
+    "default": "satoshispictures"
+  },
+  "targets": {
+    "satoshispictures": {
+      "hosting": {
+        "blockstack": [
+          "blockstack-test"
+        ]
+      }
+    }
+  }
+}

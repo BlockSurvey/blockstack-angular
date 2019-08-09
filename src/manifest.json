@@ -1,0 +1,13 @@
+{
+  "name": "Blockstack Angular",
+  "short_name": "BlockstackAngular",
+  "description": "Blockstack Angular Example",
+  "icons": [
+    {
+      "src": "http://localhost:4200/favicon.ico",
+      "sizes": "400x400",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "http://localhost:4200/"
+}

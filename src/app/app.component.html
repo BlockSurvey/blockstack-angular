@@ -1,0 +1,65 @@
+<!-- Login -->
+<div class="container" *ngIf="bs && !bs.isUserSignedIn()">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div style="text-align: center; margin-top: 25%;">
+
+                <div style="font-size: 22px; font-weight: bold; padding: 20px;">Blockstack Login and Storage Demo</div>
+
+                <button type="button" class="btn btn-primary" (click)='signIn($event)'>Sign in with Blockstack</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Body -->
+<div class="container" *ngIf="bs && bs.isUserSignedIn()">
+
+    <!-- Header -->
+    <div class="row">
+        <div class="col-6">
+            <!-- Title -->
+            <div style="font-size: 1.5rm; font-weight: bold; padding-top: 18px;">Blockstack Demo</div>
+        </div>
+        <div class="col-6" style="padding: 10px;">
+            <!--The content below is only a placeholder and can be replaced.-->
+            <button type="button" class="btn btn-outline-primary float-right" (click)='signOut($event)'>Sign
+                out</button>
+        </div>
+    </div>
+
+    <!-- Body -->
+    <div class="row">
+        <div class="col-12" style="text-align: center;">
+            <div style="border: 1px dotted black; background: #f1f1f1; padding: 40px; border-radius: 8px; cursor: pointer; margin-top: 20px;"
+                (click)="imageFile.click();">
+                Upload Image
+            </div>
+            <!-- Hidden image file upload component -->
+            <input #imageFile type="file" accept="image/*" (change)="uploadImage(imageFile.files)"
+                style="display: none;">
+        </div>
+
+        <!-- Title -->
+        <div class="col-12">
+            <div style="font-size: 1.5rm; font-weight: 500; padding: 18px 0;">My Files</div>
+        </div>
+
+    </div>
+
+    <!-- List of files -->
+    <div class="row">
+        <div class="col-6 col-md-2" *ngFor="let image of gallery; let i = index;" style="text-align: center;">
+            <!-- Logo Image -->
+            <img [src]="image" style="width: 100%; padding: 10px;">
+
+            <!-- <button type="button" class="btn btn-outline-primary" (click)='delete(i)'>Delete</button> -->
+        </div>
+    </div>
+
+</div>
+
+
+<router-outlet></router-outlet>
